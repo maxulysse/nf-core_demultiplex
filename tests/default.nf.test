@@ -1,16 +1,16 @@
 nextflow_pipeline {
 
-    name "Test Workflow main.nf - BCLCONVERT"
+    name "Test Workflow main.nf - BASES2FASTQ"
     script "../main.nf"
-    profile "test"
-    tag "bclconvert"
+    profile "test_bases2fastq"
+    tag "bases2fastq"
     tag "pipeline"
 
-    test("BCL-CONVERT") {
+    test("Bases2Fastq") {
 
         when {
             params {
-                outdir        = "$outputDir"
+                outdir = "$outputDir"
             }
         }
 

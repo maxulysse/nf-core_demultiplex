@@ -3,6 +3,23 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.6.1dev - [date]
+
+### `Added`
+
+### `Changed`
+
+- [#334](https://github.com/nf-core/demultiplex/pull/334) Template update for nf-core/tools v3.3.2
+
+### `Fixed`
+
+### `Dependencies`
+
+| Dependency | Old version | New version |
+| ---------- | ----------- | ----------- |
+| coreutils  | 8.30        | 9.5         |
+| multiqc    | 1.29        | 1.30        |
+
 ## 1.6.1 - 2025-04-23
 
 ### `Added`
