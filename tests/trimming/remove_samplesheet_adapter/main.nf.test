@@ -23,6 +23,8 @@ nextflow_pipeline {
             def stable_name = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
             // stable_path: All files in ${params.outdir}/ with stable content
             def stable_path = getAllFilesFromDir(params.outdir, ignoreFile: 'tests/.nftignore')
+            // samplesheet: All samplesheets in ${params.outdir}/samplesheet/
+            def samplesheet = getAllFilesFromDir(params.outdir, include: ['samplesheet/*_samplesheet.csv'])
             assertAll(
                 { assert workflow.success },
                 { assert snapshot(
@@ -61,6 +63,8 @@ nextflow_pipeline {
             def stable_name = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
             // stable_path: All files in ${params.outdir}/ with stable content
             def stable_path = getAllFilesFromDir(params.outdir, ignoreFile: 'tests/.nftignore')
+            // samplesheet: All samplesheets in ${params.outdir}/samplesheet/
+            def samplesheet = getAllFilesFromDir(params.outdir, include: ['samplesheet/*_samplesheet.csv'])
             assertAll(
                 { assert workflow.success },
                 { assert snapshot(
@@ -98,6 +102,8 @@ nextflow_pipeline {
             def stable_name = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
             // stable_path: All files in ${params.outdir}/ with stable content
             def stable_path = getAllFilesFromDir(params.outdir, ignoreFile: 'tests/.nftignore')
+            // samplesheet: All samplesheets in ${params.outdir}/samplesheet/
+            def samplesheet = getAllFilesFromDir(params.outdir, include: ['samplesheet/*_samplesheet.csv'])
             assertAll(
                 { assert workflow.success },
                 { assert snapshot(

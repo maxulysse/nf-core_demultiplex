@@ -19,7 +19,8 @@ nextflow_pipeline {
             def stable_name = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
             // stable_path: All files in ${params.outdir}/ with stable content
             def stable_path = getAllFilesFromDir(params.outdir, ignoreFile: 'tests/.nftignore')
-            def samplesheet = getAllFilesFromDir(params.outdir, include: ['**/_samplesheet.csv'])
+            // samplesheet: All samplesheets in ${params.outdir}/samplesheet/
+            def samplesheet = getAllFilesFromDir(params.outdir, include: ['samplesheet/*_samplesheet.csv'])
             assert workflow.success
             assertAll(
                 { assert snapshot(
@@ -31,7 +32,7 @@ nextflow_pipeline {
                     stable_name,
                     // All files with stable contents
                     stable_path,
-                    samplesheet.collect{ file -> [ file.getName(), UTILS.validateFastqPaths(file.toString()) ] }
+                    samplesheet.collect{ file -> [ file.getName(), UTILS.validateFastqPaths(file) ] }
                 ).match() }
             )
         }

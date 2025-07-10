@@ -199,13 +199,32 @@
                 "UnassignedSequences.csv:md5,11c1693830ce941b8cfb8d2431a59097"
             ],
             [
-                
+                [
+                    "atacseq_samplesheet.csv",
+                    true
+                ],
+                [
+                    "methylseq_samplesheet.csv",
+                    true
+                ],
+                [
+                    "rnaseq_samplesheet.csv",
+                    true
+                ],
+                [
+                    "sarek_samplesheet.csv",
+                    true
+                ],
+                [
+                    "taxprofiler_samplesheet.csv",
+                    true
+                ]
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:00:50.804427907"
+        "timestamp": "2025-07-10T14:09:50.485934984"
     }
 }
