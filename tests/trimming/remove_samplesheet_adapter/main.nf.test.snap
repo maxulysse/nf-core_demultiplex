@@ -11,9 +11,6 @@
                 },
                 "MD5SUM": {
                     "md5sum": 8.3
-                },
-                "Workflow": {
-                    "nf-core/demultiplex": "v1.6.1"
                 }
             },
             [
@@ -248,9 +245,6 @@
                 },
                 "MD5SUM": {
                     "md5sum": 8.3
-                },
-                "Workflow": {
-                    "nf-core/demultiplex": "v1.6.1"
                 }
             },
             [
@@ -432,9 +426,6 @@
                 },
                 "MD5SUM": {
                     "md5sum": 8.3
-                },
-                "Workflow": {
-                    "nf-core/demultiplex": "v1.6.1"
                 }
             },
             [

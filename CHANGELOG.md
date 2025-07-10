@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### `Fixed`
 
+### `Dependencies`
+
+| Dependency | Old version | New version |
+| ---------- | ----------- | ----------- |
+| coreutils  | 8.30        | 9.5         |
+| multiqc    | 1.29        | 1.30        |
+
 ## 1.6.1 - 2025-04-23
 
 ### `Added`

@@ -47,9 +47,6 @@
                 },
                 "UNTAR_FLOWCELL": {
                     "untar": 1.34
-                },
-                "Workflow": {
-                    "nf-core/demultiplex": "v1.6.1"
                 }
             },
             [
