@@ -270,14 +270,17 @@ workflow DEMULTIPLEX {
     }
 
     // Prepare metamap with fastq info
-    ch_meta_fastq = ch_raw_fastq.map { meta, fastq_files ->
-        // Determine the publish directory based on the lane information
-        meta.publish_dir = meta.lane ? "${params.outdir}/${meta.fcid}/L00${meta.lane}" : "${params.outdir}/${meta.fcid}" //Must be fcid because id gets modified
-        meta.fastq_1 = "${meta.publish_dir}/${fastq_files[0].getName()}"
+    ch_meta_fastq = ch_fastq_to_qc.map { meta, fastq_files ->
+        // Normalize input to always be a list
+        def files_list = fastq_files instanceof List ? fastq_files : [fastq_files]
 
-        // Add full path for fastq_2 to the metadata if the sample is not single-end
-        if (!meta.single_end) {
-            meta.fastq_2 = "${meta.publish_dir}/${fastq_files[1].getName()}"
+        // Determine the publish directory based on the lane information
+        meta.publish_dir = meta.lane ? "${params.outdir}/${meta.fcid}/L00${meta.lane}" : "${params.outdir}/${meta.fcid}"
+
+        // Add full path for fastq files to the metadata
+        meta.fastq_1 = "${meta.publish_dir}/${files_list[0].getName()}"
+        if (!meta.single_end && files_list.size() > 1) {
+            meta.fastq_2 = "${meta.publish_dir}/${files_list[1].getName()}"
         }
         return meta
     }
