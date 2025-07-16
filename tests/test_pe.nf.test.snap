@@ -10,7 +10,7 @@
                     "falco": "1.2.1"
                 },
                 "FASTP": {
-                    "fastp": "0.23.4"
+                    "fastp": "0.24.0"
                 },
                 "MD5SUM": {
                     "md5sum": 9.5
@@ -257,13 +257,13 @@
                 "Report.css:md5,eb7d3eb68fc1539f411404987246b59b",
                 "index.html:md5,5747c407854ae2c358d0ec201ce622d8",
                 "tree.html:md5,a1b9bf592973ca829ec69ddf888b7e34",
-                "Sample1_S1_L001.fastp.json:md5,ad6e2f9b58a9d677f4eaa50353e6071d",
+                "Sample1_S1_L001.fastp.json:md5,19c23f00097bccd7f7067fdb09291667",
                 "Sample1_S1_L001_1.fastp.fastq.gz:md5,64639ff33d4b07d62a9079f88cbbd373",
-                "Sample1_S1_L001_1.fastp.fastq.gz.md5:md5,d9e351a8a996e158aec1be44440edec0",
+                "Sample1_S1_L001_1.fastp.fastq.gz.md5:md5,6f0ec84f962ebeb9008772797512e230",
                 "Sample1_S1_L001_1.fastp.fastq.gz_fastqc_data.txt:md5,2de491ae04c8eb50d4a6a5759ade8322",
                 "Sample1_S1_L001_1.fastp.fastq.gz_summary.txt:md5,917b542afe3e3f178b994317c955ce02",
                 "Sample1_S1_L001_2.fastp.fastq.gz:md5,adbc8e47c8e7e902777a01ea3d73b306",
-                "Sample1_S1_L001_2.fastp.fastq.gz.md5:md5,bb896815f6a2b678fe3451b80ed8c653",
+                "Sample1_S1_L001_2.fastp.fastq.gz.md5:md5,8e9dd76d575b763c66a4623dd2873f4f",
                 "Sample1_S1_L001_2.fastp.fastq.gz_fastqc_data.txt:md5,88cc69dd5e9eb06d6045c8d9e9a98af3",
                 "Sample1_S1_L001_2.fastp.fastq.gz_summary.txt:md5,441197ccd90d2b018db631a66d6fbbb3",
                 "Sample1_S1_L001_R1_001.fastq.gz:md5,0675fb6365322eaafb33c0f8e862b54b",
@@ -332,6 +332,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:38:07.87686631"
+        "timestamp": "2025-07-15T20:12:52.976764188"
     }
 }

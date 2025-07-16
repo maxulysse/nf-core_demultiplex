@@ -4,10 +4,10 @@
             12,
             {
                 "BCLCONVERT": {
-                    "bclconvert": "4.3.6"
+                    "bclconvert": "4.3.13"
                 },
                 "FASTP": {
-                    "fastp": "0.23.4"
+                    "fastp": "0.24.0"
                 },
                 "MD5SUM": {
                     "md5sum": 9.5
@@ -198,8 +198,8 @@
                 "Top_Unknown_Barcodes.csv:md5,2e2faba761137f228e56bd3428453ccc",
                 "fastq_list.csv:md5,ae1470cd741e33b87a4ad26f849a50f9",
                 "Sample1_S1_L001.fastp.fastq.gz:md5,64639ff33d4b07d62a9079f88cbbd373",
-                "Sample1_S1_L001.fastp.fastq.gz.md5:md5,c3cd96f3a22fb6afbaa1df324814d54c",
-                "Sample1_S1_L001.fastp.json:md5,d9d2d702f3c64412a04cd0768863b1ab",
+                "Sample1_S1_L001.fastp.fastq.gz.md5:md5,9ecb28b42ff9624bf0c56297d8a21cb5",
+                "Sample1_S1_L001.fastp.json:md5,f32924123fc99081ca2d98377e316ae5",
                 "Sample1_S1_L001_R1_001.fastq.gz:md5,0675fb6365322eaafb33c0f8e862b54b",
                 "Undetermined_S0_L001_R1_001.fastq.gz:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "test_no_adapter.lane1_no_adapters.csv:md5,ee5db2e12754e069998b0a96e535238c",
@@ -223,8 +223,8 @@
                 "Top_Unknown_Barcodes.csv:md5,2e2faba761137f228e56bd3428453ccc",
                 "fastq_list.csv:md5,ae1470cd741e33b87a4ad26f849a50f9",
                 "Sample1_S1_L001.fastp.fastq.gz:md5,64639ff33d4b07d62a9079f88cbbd373",
-                "Sample1_S1_L001.fastp.fastq.gz.md5:md5,c3cd96f3a22fb6afbaa1df324814d54c",
-                "Sample1_S1_L001.fastp.json:md5,d9d2d702f3c64412a04cd0768863b1ab",
+                "Sample1_S1_L001.fastp.fastq.gz.md5:md5,9ecb28b42ff9624bf0c56297d8a21cb5",
+                "Sample1_S1_L001.fastp.json:md5,f32924123fc99081ca2d98377e316ae5",
                 "Sample1_S1_L001_R1_001.fastq.gz:md5,0675fb6365322eaafb33c0f8e862b54b",
                 "Undetermined_S0_L001_R1_001.fastq.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
@@ -233,14 +233,14 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:50:30.43419383"
+        "timestamp": "2025-07-15T20:14:48.835661485"
     },
     "User wants to trim with the demultiplexer": {
         "content": [
             10,
             {
                 "BCLCONVERT": {
-                    "bclconvert": "4.3.6"
+                    "bclconvert": "4.3.13"
                 },
                 "MD5SUM": {
                     "md5sum": 9.5
@@ -416,14 +416,14 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:51:12.213656506"
+        "timestamp": "2025-07-15T20:15:43.811709856"
     },
     "User wants to skip trimming all together": {
         "content": [
             10,
             {
                 "BCLCONVERT": {
-                    "bclconvert": "4.3.6"
+                    "bclconvert": "4.3.13"
                 },
                 "MD5SUM": {
                     "md5sum": 9.5
@@ -599,6 +599,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:51:57.821444361"
+        "timestamp": "2025-07-15T20:16:49.636636174"
     }
 }
