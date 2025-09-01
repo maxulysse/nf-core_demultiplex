@@ -10,7 +10,7 @@
                     "falco": "1.2.1"
                 },
                 "FASTP": {
-                    "fastp": "0.23.4"
+                    "fastp": "0.24.0"
                 },
                 "MD5SUM": {
                     "md5sum": 9.5
@@ -167,7 +167,7 @@
                 "sim-data/UnassignedSequences.csv"
             ],
             [
-                "fastp-insert-size-plot.txt:md5,ac9a9c57ed6cbd69033968f727e755de",
+                "fastp-insert-size-plot.txt:md5,afc2c835eb4343f5a97370bc06a584c0",
                 "fastp-seq-content-gc-plot_Read_1_After_filtering.txt:md5,fc7408bc90e9fd3768e041c470b297eb",
                 "fastp-seq-content-gc-plot_Read_1_Before_filtering.txt:md5,f1b14d0b742540f46a447508b27c2a6d",
                 "fastp-seq-content-gc-plot_Read_2_After_filtering.txt:md5,df0d79b9296d4ee8996f2a28ccff4b65",
@@ -191,7 +191,7 @@
                 "fastqc_sequence_length_distribution_plot.txt:md5,5b002b51364b518093ad98ebe0a0ca39",
                 "multiqc_citations.txt:md5,d35df50e9903a96a2b3bce3c1fbc8ad2",
                 "sim-data.csv:md5,1d1dab697bd88c411fff89c102024295",
-                "DefaultSample.fastp.json:md5,9c10bbfbc4beb9523ca3a114f95709db",
+                "DefaultSample.fastp.json:md5,eb8ddc581ea0142ed8b1da747b5bf6f3",
                 "DefaultSample_R1.fastq.gz:md5,6c73b924e4eb53b716614aa6fd8b791a",
                 "DefaultSample_R2.fastq.gz:md5,54e2c0894844e42605b7cd567b1c7dbe",
                 "Metrics.csv:md5,ad7af77573845924062e2554cc641b16",
@@ -225,6 +225,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:09:50.485934984"
+        "timestamp": "2025-07-16T09:11:56.183271813"
     }
 }

@@ -4,10 +4,10 @@
             13,
             {
                 "CELLRANGER_MKFASTQ": {
-                    "cellranger": "8.0.0"
+                    "cellranger": "9.0.1"
                 },
                 "FASTP": {
-                    "fastp": "0.23.4"
+                    "fastp": "0.24.0"
                 },
                 "MD5SUM": {
                     "md5sum": 9.5
@@ -166,13 +166,13 @@
                 "AdapterTrimming.txt:md5,522b8c57ed2a84da31ec3edda9424b60",
                 "DemultiplexingStats.xml:md5,60cce68e6a27371dc257ca9f65e14cc1",
                 "FastqSummaryF1L1.txt:md5,876f188644f5e12eca513baeff158306",
-                "test_sample_S1_L001.fastp.json:md5,e4321caea21d0c44d0d7269065bdb79d",
+                "test_sample_S1_L001.fastp.json:md5,644aaed265a12dfeffbd4e06c0461b5f",
                 "test_sample_S1_L001_1.fastp.fastq.gz:md5,b348491a3b1afa096fde514dbdf55215",
                 "test_sample_S1_L001_1.fastp.fastq.gz.md5:md5,43d7882f3aaae47b56df56da6c802236",
                 "test_sample_S1_L001_2.fastp.fastq.gz:md5,1c60f1f3958b8b2b0255b9fae6df0b3d",
                 "test_sample_S1_L001_2.fastp.fastq.gz.md5:md5,01d742cc56639c476b0bac0c094eba4b",
                 "test_sample_S1_L001_I1_001.fastp.fastq.gz.md5:md5,82e397b4a2418f27269a30f6ca0e349e",
-                "test_sample_S1_L001_I1_001.fastp.json:md5,b5368b3125c35f7a5dfa2d273cd79c32",
+                "test_sample_S1_L001_I1_001.fastp.json:md5,3fe01149f82436c2a9cfb7a3f948cae7",
                 "test_sample_S1_L001_I1_001.fastq.gz:md5,018b0dbd8daf76fb9f6dfa4729ea0453",
                 "test_sample_S1_L001_R1_001.fastq.gz:md5,df3ddf85d83bd722219c646c7815dbdc",
                 "test_sample_S1_L001_R2_001.fastq.gz:md5,c8a387b517ff5b7e56b85ccbf882efd2",
@@ -221,6 +221,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:30:16.057770917"
+        "timestamp": "2025-07-15T20:02:15.40566552"
     }
 }

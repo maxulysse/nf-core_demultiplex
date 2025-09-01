@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [#334](https://github.com/nf-core/demultiplex/pull/334) Template update for nf-core/tools v3.3.2
 - [#335](https://github.com/nf-core/demultiplex/pull/335) Generated samplesheets now point to trimmed fastq files when they exist.
+- [#336](https://github.com/nf-core/demultiplex/pull/336) Updated nf-core modules to most recent versions except fqtk.
 
 ### `Fixed`
 
@@ -22,6 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | Dependency | Old version | New version |
 | ---------- | ----------- | ----------- |
 | coreutils  | 8.30        | 9.5         |
+| fastp      | 0.23.4      | 0.24.0      |
+| fqtk       | 0.2.1       | 0.3.1       |
+| kraken2    | 2.1.3       | 2.1.5       |
 | multiqc    | 1.29        | 1.30        |
 
 ## 1.6.1 - 2025-04-23

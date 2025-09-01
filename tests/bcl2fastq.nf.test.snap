@@ -10,7 +10,7 @@
                     "falco": "1.2.1"
                 },
                 "FASTP": {
-                    "fastp": "0.23.4"
+                    "fastp": "0.24.0"
                 },
                 "MD5SUM": {
                     "md5sum": 9.5
@@ -200,8 +200,8 @@
                 "index.html:md5,5747c407854ae2c358d0ec201ce622d8",
                 "tree.html:md5,a1b9bf592973ca829ec69ddf888b7e34",
                 "Sample1_S1_L001.fastp.fastq.gz:md5,64639ff33d4b07d62a9079f88cbbd373",
-                "Sample1_S1_L001.fastp.fastq.gz.md5:md5,c3cd96f3a22fb6afbaa1df324814d54c",
-                "Sample1_S1_L001.fastp.json:md5,d9d2d702f3c64412a04cd0768863b1ab",
+                "Sample1_S1_L001.fastp.fastq.gz.md5:md5,9ecb28b42ff9624bf0c56297d8a21cb5",
+                "Sample1_S1_L001.fastp.json:md5,f32924123fc99081ca2d98377e316ae5",
                 "Sample1_S1_L001_R1_001.fastq.gz:md5,0675fb6365322eaafb33c0f8e862b54b",
                 "Sample1_S1_L001_fastqc_data.txt:md5,0adf4e2617f55fabba0663583c1f65b7",
                 "Sample1_S1_L001_summary.txt:md5,510c6b8a26ff8d530950c05b3ca5a1c6",
@@ -255,6 +255,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-10T14:20:32.359880907"
+        "timestamp": "2025-07-15T19:51:38.214908734"
     }
 }
