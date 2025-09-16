@@ -19,6 +19,8 @@ include { RUNDIR_CHECKQC                                                } from '
 include { FASTQ_TO_SAMPLESHEET as FASTQ_TO_SAMPLESHEET_RNASEQ           } from '../modules/local/fastq_to_samplesheet/main'
 include { FASTQ_TO_SAMPLESHEET as FASTQ_TO_SAMPLESHEET_ATACSEQ          } from '../modules/local/fastq_to_samplesheet/main'
 include { FASTQ_TO_SAMPLESHEET as FASTQ_TO_SAMPLESHEET_TAXPROFILER      } from '../modules/local/fastq_to_samplesheet/main'
+include { FASTQ_TO_SAMPLESHEET as FASTQ_TO_SAMPLESHEET_SAREK            } from '../modules/local/fastq_to_samplesheet/main'
+include { FASTQ_TO_SAMPLESHEET as FASTQ_TO_SAMPLESHEET_METHYLSEQ        } from '../modules/local/fastq_to_samplesheet/main'
 
 //
 // MODULE: Installed directly from nf-core/modules
@@ -69,7 +71,7 @@ workflow DEMULTIPLEX {
     // Remove adapter from Illumina samplesheet to avoid adapter trimming in demultiplexer tools
     ch_samplesheet = ch_samplesheet
         .map{ meta, csv, tar, optional -> [[id: meta.id.toString(), lane: meta.lane], csv, tar, optional] } // Make meta.id be always a string
-    if (params.remove_adapter && (params.demultiplexer in ["bcl2fastq", "bclconvert", "mkfastq"])) {
+    if (params.remove_samplesheet_adapter && (params.demultiplexer in ["bcl2fastq", "bclconvert", "mkfastq"])) {
         ch_samplesheet_no_adapter = ch_samplesheet
             .collectFile(storeDir: "${params.outdir}") { item ->
                 def suffix = item[0].lane ? ".lane${item[0].lane}" : "" //need to produce one file per item in the channel else join fails
@@ -239,13 +241,11 @@ workflow DEMULTIPLEX {
     ch_fastq_to_qc = ch_raw_fastq
 
     // MODULE: fastp
-    if (!("fastp" in skip_tools)){
+    if (!("fastp" in skip_tools) && trim_fastq){
             FASTP(ch_raw_fastq, [], [], [], [])
             ch_multiqc_files = ch_multiqc_files.mix( FASTP.out.json.map { meta, json -> return json} )
             ch_versions = ch_versions.mix(FASTP.out.versions)
-            if (trim_fastq) {
-                ch_fastq_to_qc = FASTP.out.reads
-            }
+            ch_fastq_to_qc = FASTP.out.reads
     }
 
     // MODULE: falco, drop in replacement for fastqc
@@ -280,14 +280,17 @@ workflow DEMULTIPLEX {
     }
 
     // Prepare metamap with fastq info
-    ch_meta_fastq = ch_raw_fastq.map { meta, fastq_files ->
-        // Determine the publish directory based on the lane information
-        meta.publish_dir = meta.lane ? "${params.outdir}/${meta.fcid}/L00${meta.lane}" : "${params.outdir}/${meta.fcid}" //Must be fcid because id gets modified
-        meta.fastq_1 = "${meta.publish_dir}/${fastq_files[0].getName()}"
+    ch_meta_fastq = ch_fastq_to_qc.map { meta, fastq_files ->
+        // Normalize input to always be a list
+        def files_list = fastq_files instanceof List ? fastq_files : [fastq_files]
 
-        // Add full path for fastq_2 to the metadata if the sample is not single-end
-        if (!meta.single_end) {
-            meta.fastq_2 = "${meta.publish_dir}/${fastq_files[1].getName()}"
+        // Determine the publish directory based on the lane information
+        meta.publish_dir = meta.lane ? "${params.outdir}/${meta.fcid}/L00${meta.lane}" : "${params.outdir}/${meta.fcid}"
+
+        // Add full path for fastq files to the metadata
+        meta.fastq_1 = "${meta.publish_dir}/${files_list[0].getName()}"
+        if (!meta.single_end && files_list.size() > 1) {
+            meta.fastq_2 = "${meta.publish_dir}/${files_list[1].getName()}"
         }
         return meta
     }
@@ -301,13 +304,19 @@ workflow DEMULTIPLEX {
 
     ch_meta_fastq_taxprofiler = ch_meta_fastq
     FASTQ_TO_SAMPLESHEET_TAXPROFILER(ch_meta_fastq_taxprofiler.collect(), "taxprofiler", strandedness)
+
+    ch_meta_fastq_sarek = ch_meta_fastq
+    FASTQ_TO_SAMPLESHEET_SAREK(ch_meta_fastq_sarek.collect(), "sarek", strandedness)
+
+    ch_meta_fastq_methylseq = ch_meta_fastq
+    FASTQ_TO_SAMPLESHEET_METHYLSEQ(ch_meta_fastq_methylseq.collect(), "methylseq", strandedness)
     //
     // Collate and save software versions
     //
     softwareVersionsToYAML(ch_versions)
         .collectFile(
             storeDir: "${params.outdir}/pipeline_info",
-            name: 'nf_core_'  + 'pipeline_software_' +  'mqc_'  + 'versions.yml',
+            name: 'nf_core_'  +  'demultiplex_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         ).set { ch_collated_versions }

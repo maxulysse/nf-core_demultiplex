@@ -3,6 +3,58 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.6.1dev - [date]
+
+### `Added`
+
+### `Changed`
+
+- [#334](https://github.com/nf-core/demultiplex/pull/334) Template update for nf-core/tools v3.3.2
+- [#335](https://github.com/nf-core/demultiplex/pull/335) Generated samplesheets now point to trimmed fastq files when they exist.
+- [#336](https://github.com/nf-core/demultiplex/pull/336) Updated nf-core modules to most recent versions except fqtk.
+
+### `Fixed`
+
+- [#334](https://github.com/nf-core/demultiplex/pull/334) Template update for nf-core/tools v3.3.2
+- [#335](https://github.com/nf-core/demultiplex/pull/335) Samplesheet generation no longer has a tag (was previously every fastq file name)
+
+### `Dependencies`
+
+| Dependency | Old version | New version |
+| ---------- | ----------- | ----------- |
+| coreutils  | 8.30        | 9.5         |
+| fastp      | 0.23.4      | 0.24.0      |
+| fqtk       | 0.2.1       | 0.3.1       |
+| kraken2    | 2.1.3       | 2.1.5       |
+| multiqc    | 1.29        | 1.30        |
+
+## 1.6.1 - 2025-04-23
+
+### `Added`
+
+### `Changed`
+
+- [#306](https://github.com/nf-core/demultiplex/pull/306) Update template to v3.2.0.
+- [#323](https://github.com/nf-core/demultiplex/pull/323) Update `samshee` to 0.2.10.
+- [#327](https://github.com/nf-core/demultiplex/pull/327) Changed the manifest to new style and added contributors.
+
+### `Fixed`
+
+- [#315](https://github.com/nf-core/demultiplex/pull/315) Fix adapter removal tests for various samplesheet formats
+- [#316](https://github.com/nf-core/demultiplex/pull/316) Fixed fastp module to properly respect the `trim_fastq` parameter and not run when set to false
+
+## 1.6.0 - 2025-02-18
+
+### `Added`
+
+- [#308](https://github.com/nf-core/demultiplex/pull/308) Add samplesheet generation for nf-core/sarek and nf-core/methylseq.
+
+### `Changed`
+
+### `Fixed`
+
+- [#310](https://github.com/nf-core/demultiplex/pull/310) Replace [] with null as default
+
 ## 1.5.4 - 2024-12-03
 
 ### `Added`

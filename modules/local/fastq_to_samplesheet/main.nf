@@ -1,5 +1,4 @@
 process FASTQ_TO_SAMPLESHEET {
-    tag "$meta.id"
 
     executor 'local'
     memory 100.MB
@@ -50,6 +49,11 @@ process FASTQ_TO_SAMPLESHEET {
             pipeline_map.replicate = 1
         } else if (pipeline == 'taxprofiler') {
             pipeline_map.fasta = ''
+        } else if (pipeline == 'sarek') {
+            pipeline_map.patient = ''
+            pipeline_map.lane = "${item.lane}"
+        } else if (pipeline == 'methylseq') {
+            pipeline_map.genome = ''
         }
 
         // Add all keys to the set of unique columns

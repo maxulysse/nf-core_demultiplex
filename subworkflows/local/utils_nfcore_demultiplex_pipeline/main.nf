@@ -64,11 +64,6 @@ workflow PIPELINE_INITIALISATION {
     )
 
     //
-    // Custom validation for pipeline parameters
-    //
-    validateInputParameters()
-
-    //
     // Create channel from input file provided through params.input
     //
     // When using the demultiplexer fqtk, the samplesheet must contain an additional
@@ -84,7 +79,8 @@ workflow PIPELINE_INITIALISATION {
                 if ( !file(per_flowcell_manifest).exists() ){
                     error "[Samplesheet Error] The per flowcell manifest file does not exist: ${per_flowcell_manifest}"
                 }
-                [ meta, samplesheet, flowcell, per_flowcell_manifest ]
+                [meta + [lane: meta.lane == [] ? null : meta.lane], samplesheet, flowcell, per_flowcell_manifest]
+                // cf https://github.com/nextflow-io/nf-schema/issues/163
             }
 
         ch_flowcell_manifest = ch_samplesheet.map{ meta, samplesheet, flowcell, per_flowcell_manifest -> per_flowcell_manifest }
@@ -96,8 +92,11 @@ workflow PIPELINE_INITIALISATION {
             }
 
     } else {
-        ch_samplesheet = Channel
-            .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
+        ch_samplesheet = Channel.fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
+            .map { meta, samplesheet, flowcell, per_flowcell_manifest ->
+                [meta + [lane: meta.lane == [] ? null : meta.lane], samplesheet, flowcell, per_flowcell_manifest]
+                // cf https://github.com/nextflow-io/nf-schema/issues/163
+            }
     }
 
     emit:
@@ -124,13 +123,13 @@ workflow PIPELINE_COMPLETION {
 
     main:
     summary_params = paramsSummaryMap(workflow, parameters_schema: "nextflow_schema.json")
+    def multiqc_reports = multiqc_report.toList()
 
     //
     // Completion email and summary
     //
     // We need to ensure that the multiqc_report is a value channel (DataflowVariable).
     // Queue channels will not be available in the workflow.onComplete block.
-    def multiqc_reports = multiqc_report.toList()
 
     workflow.onComplete {
         assert multiqc_reports instanceof groovyx.gpars.dataflow.DataflowVariable : "Expected a value channel (DataflowVariable) for multiqc_reports inside workflow.onComplete block."
@@ -163,12 +162,6 @@ workflow PIPELINE_COMPLETION {
     FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-//
-// Check and validate pipeline parameters
-//
-def validateInputParameters() {
-    genomeExistsError()
-}
 
 //
 // Get attribute from genome config file e.g. fasta
@@ -225,7 +218,7 @@ def toolBibliographyText() {
 }
 
 def methodsDescriptionText(mqc_methods_yaml) {
-    // Convert  to a named map so can be used as with familar NXF ${workflow} variable syntax in the MultiQC YML file
+    // Convert  to a named map so can be used as with familiar NXF ${workflow} variable syntax in the MultiQC YML file
     def meta = [:]
     meta.workflow = workflow.toMap()
     meta["manifest_map"] = workflow.manifest.toMap()
@@ -260,4 +253,3 @@ def methodsDescriptionText(mqc_methods_yaml) {
 
     return description_html.toString()
 }
-
