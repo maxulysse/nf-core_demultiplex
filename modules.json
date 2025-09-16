@@ -62,7 +62,7 @@
                     },
                     "mgikit/demultiplex": {
                         "branch": "master",
-                        "git_sha": "0bf42a3bdf105ddc58f6cc5523c86b4617c4ed04",
+                        "git_sha": "cc983a93d193e36b12ab67b43348b0c1fa6c1f5c",
                         "installed_by": ["modules"]
                     },
                     "multiqc": {
