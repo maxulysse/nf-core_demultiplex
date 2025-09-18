@@ -60,6 +60,11 @@
                         "git_sha": "41dfa3f7c0ffabb96a6a813fe321c6d1cc5b6e46",
                         "installed_by": ["modules"]
                     },
+                    "mgikit/demultiplex": {
+                        "branch": "master",
+                        "git_sha": "cc983a93d193e36b12ab67b43348b0c1fa6c1f5c",
+                        "installed_by": ["modules"]
+                    },
                     "multiqc": {
                         "branch": "master",
                         "git_sha": "a4488d3d09244f29fb4606ba4eef85d59dcc6ad8",
