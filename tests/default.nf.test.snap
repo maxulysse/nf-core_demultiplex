@@ -4,7 +4,7 @@
             12,
             {
                 "BASES2FASTQ": {
-                    "bases2fastq": "1.8.0.1260801529, use subject to license available at elementbiosciences.com"
+                    "bases2fastq": "2.3.0.2116803307, use subject to license available at elementbiosciences.com"
                 },
                 "FALCO": {
                     "falco": "1.2.1"
@@ -222,9 +222,9 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-07-16T09:11:56.183271813"
+        "timestamp": "2025-10-27T18:26:22.435795792"
     }
 }
