@@ -16,7 +16,6 @@
             [
                 "multiqc",
                 "multiqc/multiqc_data",
-                "multiqc/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/multiqc_data/bclconvert-lane-stats-table.txt",
                 "multiqc/multiqc_data/bclconvert-sample-stats-table.txt",
                 "multiqc/multiqc_data/bclconvert_lane_counts.txt",
@@ -31,6 +30,7 @@
                 "multiqc/multiqc_data/fastp_filtered_reads_plot.txt",
                 "multiqc/multiqc_data/llms-full.txt",
                 "multiqc/multiqc_data/multiqc.log",
+                "multiqc/multiqc_data/multiqc.parquet",
                 "multiqc/multiqc_data/multiqc_bclconvert_bylane.txt",
                 "multiqc/multiqc_data/multiqc_bclconvert_bysample.txt",
                 "multiqc/multiqc_data/multiqc_citations.txt",
@@ -249,7 +249,6 @@
             [
                 "multiqc",
                 "multiqc/multiqc_data",
-                "multiqc/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/multiqc_data/bclconvert-lane-stats-table.txt",
                 "multiqc/multiqc_data/bclconvert-sample-stats-table.txt",
                 "multiqc/multiqc_data/bclconvert_lane_counts.txt",
@@ -257,6 +256,7 @@
                 "multiqc/multiqc_data/bclconvert_sample_counts_Index_mismatches.txt",
                 "multiqc/multiqc_data/llms-full.txt",
                 "multiqc/multiqc_data/multiqc.log",
+                "multiqc/multiqc_data/multiqc.parquet",
                 "multiqc/multiqc_data/multiqc_bclconvert_bylane.txt",
                 "multiqc/multiqc_data/multiqc_bclconvert_bysample.txt",
                 "multiqc/multiqc_data/multiqc_citations.txt",
@@ -432,7 +432,6 @@
             [
                 "multiqc",
                 "multiqc/multiqc_data",
-                "multiqc/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/multiqc_data/bclconvert-lane-stats-table.txt",
                 "multiqc/multiqc_data/bclconvert-sample-stats-table.txt",
                 "multiqc/multiqc_data/bclconvert_lane_counts.txt",
@@ -440,6 +439,7 @@
                 "multiqc/multiqc_data/bclconvert_sample_counts_Index_mismatches.txt",
                 "multiqc/multiqc_data/llms-full.txt",
                 "multiqc/multiqc_data/multiqc.log",
+                "multiqc/multiqc_data/multiqc.parquet",
                 "multiqc/multiqc_data/multiqc_bclconvert_bylane.txt",
                 "multiqc/multiqc_data/multiqc_bclconvert_bysample.txt",
                 "multiqc/multiqc_data/multiqc_citations.txt",
