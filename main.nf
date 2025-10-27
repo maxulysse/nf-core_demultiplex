@@ -15,9 +15,10 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { DEMULTIPLEX  } from './workflows/demultiplex'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_demultiplex_pipeline'
+include { DEMULTIPLEX             } from './workflows/demultiplex'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_demultiplex_pipeline'
+include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_demultiplex_pipeline'
+
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     NAMED WORKFLOWS FOR PIPELINE
@@ -40,6 +41,7 @@ workflow NFCORE_DEMULTIPLEX {
     DEMULTIPLEX (
         samplesheet
     )
+
     emit:
     multiqc_report = DEMULTIPLEX.out.multiqc_report // channel: /path/to/multiqc_report.html
 }
@@ -67,12 +69,11 @@ workflow {
         params.show_hidden
     )
 
-    //
     // WORKFLOW: Run main workflow
-    //
     NFCORE_DEMULTIPLEX (
         PIPELINE_INITIALISATION.out.samplesheet
     )
+
     //
     // SUBWORKFLOW: Run completion tasks
     //
