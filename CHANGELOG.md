@@ -33,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | kraken2     | 2.1.3            | 2.1.5            |
 | multiqc     | 1.29             | 1.31             |
 
-## 1.6.1 - 2025-04-23
+## 1.6.1 - 2025-04-24
 
 ### `Added`
 
