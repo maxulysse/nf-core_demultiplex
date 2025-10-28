@@ -12,23 +12,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#334](https://github.com/nf-core/demultiplex/pull/334) Template update for nf-core/tools v3.3.2
 - [#335](https://github.com/nf-core/demultiplex/pull/335) Generated samplesheets now point to trimmed fastq files when they exist.
 - [#336](https://github.com/nf-core/demultiplex/pull/336) Updated nf-core modules to most recent versions except fqtk.
+- [#346](https://github.com/nf-core/demultiplex/pull/346) Template update for nf-core/tools v3.4.1
 - [#347](https://github.com/nf-core/demultiplex/pull/347) Updated cellranger mkfastq module to most recent version.
+- [#349](https://github.com/nf-core/demultiplex/pull/349) Updated bases2fastq
 
 ### `Fixed`
 
-- [#334](https://github.com/nf-core/demultiplex/pull/334) Template update for nf-core/tools v3.3.2
 - [#335](https://github.com/nf-core/demultiplex/pull/335) Samplesheet generation no longer has a tag (was previously every fastq file name)
 - [#347](https://github.com/nf-core/demultiplex/pull/347) Updated cellranger mkfastq module to most recent version to fix issues with downtream FALCO processing.
 
 ### `Dependencies`
 
-| Dependency | Old version | New version |
-| ---------- | ----------- | ----------- |
-| coreutils  | 8.30        | 9.5         |
-| fastp      | 0.23.4      | 0.24.0      |
-| fqtk       | 0.2.1       | 0.3.1       |
-| kraken2    | 2.1.3       | 2.1.5       |
-| multiqc    | 1.29        | 1.30        |
+| Dependency  | Old version      | New version      |
+| ----------- | ---------------- | ---------------- |
+| bases2fastq | 1.8.0.1260801529 | 2.3.0.2116803307 |
+| coreutils   | 8.30             | 9.5              |
+| fastp       | 0.23.4           | 0.24.0           |
+| fqtk        | 0.2.1            | 0.3.1            |
+| kraken2     | 2.1.3            | 2.1.5            |
+| multiqc     | 1.29             | 1.30             |
 
 ## 1.6.1 - 2025-04-23
 
