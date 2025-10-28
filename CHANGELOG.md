@@ -3,9 +3,24 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.7.0
+
+## dev
 
 ### `Added`
+
+### `Changed`
+- [#354](https://github.com/nf-core/demultiplex/pull/354) Bump version and note mgikit addition in 1.7.0 Changelog
+### `Fixed`
+
+### `Dependencies`
+
+| Dependency   | Old version | New version |
+| ------------ | ----------- | ----------- |
+
+## 1.7.0
+
+### `Added`
+- [#299](https://github.com/nf-core/demultiplex/pull/299) Added mgikit
 
 ### `Changed`
 
@@ -31,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | fastp       | 0.23.4           | 0.24.0           |
 | fqtk        | 0.2.1            | 0.3.1            |
 | kraken2     | 2.1.3            | 2.1.5            |
+| mgikit      |                  | 2.1.0            |
 | multiqc     | 1.29             | 1.31             |
 | md5sum      | 8.3              | 9.5              |
 
