@@ -30,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | fastp       | 0.23.4           | 0.24.0           |
 | fqtk        | 0.2.1            | 0.3.1            |
 | kraken2     | 2.1.3            | 2.1.5            |
-| multiqc     | 1.29             | 1.30             |
+| multiqc     | 1.29             | 1.31             |
 
 ## 1.6.1 - 2025-04-23
 
