@@ -3,7 +3,7 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.6.2dev - [date]
+## v1.7.0 - 2025-10-28
 
 ### `Added`
 
@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [#335](https://github.com/nf-core/demultiplex/pull/335) Samplesheet generation no longer has a tag (was previously every fastq file name)
 - [#347](https://github.com/nf-core/demultiplex/pull/347) Updated cellranger mkfastq module to most recent version to fix issues with downtream FALCO processing.
+- [#336](https://github.com/nf-core/demultiplex/pull/336) bclconvert now works when using fusion
 
 ### `Dependencies`
 
