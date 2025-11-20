@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### `Changed`
 
 - [#354](https://github.com/nf-core/demultiplex/pull/354) Bump version and note mgikit addition in 1.7.0 Changelog
+- [#355](https://github.com/nf-core/demultiplex/pull/355) Template update for nf-core/tools v3.3.2
 
 ### `Fixed`
 
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 | Dependency | Old version | New version |
 | ---------- | ----------- | ----------- |
+| multiqc    | 1.31        | 1.32        |
 
 ## 1.7.0
 
